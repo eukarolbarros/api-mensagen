@@ -17,6 +17,7 @@ def create_app():
 
     migrate.init_app(app, db) #coisas q eu envio pro banco 
 
+    from app.models.message import Message
     # Registro de rotas
     from .routes.messages import messages_bp
     app.register_blueprint(messages_bp, url_prefix="/messages") #registra o bp, organizar as rotas
